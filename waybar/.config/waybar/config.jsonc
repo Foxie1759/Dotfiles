@@ -1,0 +1,58 @@
+{
+  "position": "top",
+  "layer": "top",
+  "width": 1920,
+  "margin-top": 3,
+  
+  "modules-left":   [
+    "wlr/workspaces"
+  ],
+  "modules-center": [
+    "clock",
+  ],
+  "modules-right":  [
+    "tray",
+    "pulseaudio",
+  ],
+
+
+  "wlr/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "on-click": "activate",
+    "format": "{icon}",
+	"format-icons": {
+		"default": ""
+	},
+  },
+  
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10,
+  },
+  "clock": {
+   "format": "{:%b %d %R}",
+    /*"tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",*/
+    "tooltip": false,
+    "on-click": "bash ~/.config/eww/scripts/launch_calendar"
+
+  },
+  "pulseaudio": {
+    "tooltip-format": "{volume}%",
+    "format": "{icon} ",
+    "format-muted": " ﱝ",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "format-bluetooth": "{volume}% {format_source}",
+    "format-bluetooth-muted": "{format_source}",
+    "on-click": "bash ~/.config/eww/scripts/launch_dashboard",
+    "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "scroll-step": 1,
+    "format-icons": {
+      "headphone": "",
+      "headset": "",
+      "default": ["", "", "墳", ""]
+    }
+  },
+
+}
